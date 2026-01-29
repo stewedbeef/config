@@ -1,0 +1,1 @@
+ACTION=="add|change", KERNEL=="event*", ATTRS{id/vendor}=="04f3", ATTRS{id/product}=="448f", ENV{LIBINPUT_IGNORE_DEVICE}="1"

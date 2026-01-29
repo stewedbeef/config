@@ -1,0 +1,2 @@
+evdev:atkbd:dmi:*
+  KEYBOARD_KEY_6e=f23
