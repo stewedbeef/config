@@ -22,10 +22,11 @@ PROMPT='%F{green}%n@%m%f:%F{blue}%~%f$ '
 
 if [[ -o interactive ]]; then
 	local time_fmt_login
+	# Force AM/PM because I prefer it that way
 	if [ -n "$(locale t_fmt_ampm)" ]; then
-		time_fmt_login='%a %d %b %Y, %_I:%M:%S %^p %Z'
+		time_fmt_login="$(locale t_fmt_ampm)"
 	else
-		time_fmt_login='%a %d %b %Y, %H:%M:%S %Z'
+		time_fmt_login="$(locale t_fmt)"
 	fi
 
     local full_name=$(getent passwd $USER | cut -d : -f 5 | cut -d , -f 1)
@@ -35,5 +36,5 @@ if [[ -o interactive ]]; then
 
     echo "Welcome back, $full_name!"
     echo "Last login at $time_last_login"
-    echo "Time now is   $time_now"
+    echo "Local time is $time_now"
 fi
