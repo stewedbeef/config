@@ -24,9 +24,9 @@ if [[ -o interactive ]]; then
 	local time_fmt_login
 	# Force AM/PM because I prefer it that way
 	if [ -n "$(locale t_fmt_ampm)" ]; then
-		time_fmt_login="$(locale t_fmt_ampm)"
+		time_fmt_login="%a %e %b %Y, $(locale t_fmt_ampm)"
 	else
-		time_fmt_login="$(locale t_fmt)"
+		time_fmt_login="$(locale d_t_fmt)"
 	fi
 
     local full_name=$(getent passwd $USER | cut -d : -f 5 | cut -d , -f 1)
