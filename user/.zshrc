@@ -17,6 +17,15 @@ autoload -U colors && colors
 autoload -Uz up-line-or-beginning-search
 autoload -Uz down-line-or-beginning-search
 
+# Don't record commands beginning with whitespace in history
+setopt HIST_IGNORE_SPACE
+# Trim whitespace before recording history
+setopt HIST_REDUCE_BLANKS
+# Prevent history manipulation commands from being recorded
+setopt HIST_NO_STORE
+# Don't record both of two consecutive identical commands
+setopt HIST_IGNORE_DUPS
+
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # Work like the normal completion menu
 zstyle ':completion:*' menu select=0
