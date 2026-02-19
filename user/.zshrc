@@ -30,8 +30,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # Work like the normal completion menu
 zstyle ':completion:*' menu select=0
 zmodload zsh/complist
-# Except let enter accept the suggestion AND execute the line (be careful)
-bindkey -M menuselect '^M' .accept-line
 
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
@@ -42,7 +40,7 @@ bindkey '^[[B' down-line-or-beginning-search
 # Colours for ls
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PROMPT='%F{green}%n@%m%f:%F{blue}%~%f$ '
+PROMPT='%B%F{green}%n@%m%f%b:%F{blue}%~%f [%(?.%F{green}.%F{red})%?%f]$ '
 
 # Greeting
 if [[ -o interactive ]]; then
