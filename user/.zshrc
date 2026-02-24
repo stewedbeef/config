@@ -42,6 +42,9 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PROMPT='%B%F{green}%n@%m%f%b:%F{blue}%~%f [%(?.%F{green}.%F{red})%?%f]$ '
 
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+
 # Greeting
 if [[ -o interactive ]]; then
     local time_fmt_login
