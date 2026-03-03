@@ -56,7 +56,7 @@ if [[ -o interactive ]]; then
 
     # Parse the data of the full name to get the username
     local full_name=$(getent passwd $USER | cut -d : -f 5 | cut -d , -f 1)
-    local raw_time=$(last -n 2 $USER --fulltimes | sed -n '2p' | awk '{print $7, $6, $9, $8}')
+    local raw_time=$(last -n 2 $USER --time-format=iso | awk 'NR==2 {print $3}')
     local time_last_login=$(date -d "$raw_time" +"$time_fmt_login")
     local time_now=$(date +"$time_fmt_login")
 
