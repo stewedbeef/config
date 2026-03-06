@@ -35,5 +35,5 @@ if [[ -o interactive ]]; then
 
     echo "Welcome back, $full_name!"
     echo "Last login at $time_last_login"
-    echo "Time now is   $time_now"
+    echo "Local time is $time_now"
 fi
