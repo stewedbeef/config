@@ -50,10 +50,11 @@ export VISUAL=/usr/bin/vim
 # Greeting
 if [[ -o interactive ]]; then
     local time_fmt_login
+    # Force AM/PM because I prefer it that way
     if [ -n "$(locale t_fmt_ampm)" ]; then
-        time_fmt_login='%a %d %b %Y, %_I:%M:%S %^p %Z'
+        time_fmt_login="%a %e %b %Y, $(locale t_fmt_ampm)"
     else
-        time_fmt_login='%a %d %b %Y, %H:%M:%S %Z'
+        time_fmt_login="$(locale d_t_fmt)"
     fi
 
     # Parse the data of the full name to get the username
