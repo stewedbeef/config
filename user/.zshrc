@@ -74,5 +74,9 @@ zsh_greeting() {
         echo "Local time is $time_now"
     fi
 }
+zshexit() {
+    # Clean up when exiting
+    sudo -K
+}
 
 zsh_greeting
