@@ -46,6 +46,8 @@ PROMPT='%B%F{green}%n@%m%f%b:%F{blue}%~%f [%(?.%F{green}.%F{red})%?%f]$ '
 
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+# ot stands for one-time
+alias ssh-ot='ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
 
 # Greeting
 zsh_greeting() {
@@ -77,7 +79,7 @@ zshexit() {
     sudo -K
 }
 
-source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 zsh_greeting
